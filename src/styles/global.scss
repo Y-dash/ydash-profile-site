@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@import '_value';
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html, body {
+	background-color: $commonBlack;
+	color: $commonWhite;
+
+	font-family: $globalFontFamily;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+body {
+	position: relative;
+}
+
+.global-main {
+	position: relative;
+	z-index: 1;
+
+	max-width: 800px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.global-footer {
+	position: fixed;
+	left: 100%;
+	bottom: 0;
+	z-index: 3;
+
+	width: 100vh;
+	padding-bottom: 1em;
+	padding-left: 1em;
+
+	font-family: $titleFontFamily;
+	font-size: 1.125em;
+
+	transform: rotateZ(-90deg);
+	transform-origin: left bottom;
+}

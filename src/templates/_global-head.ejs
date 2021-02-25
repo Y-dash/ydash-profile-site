@@ -1,0 +1,55 @@
+<%
+	const siteTitle = 'Y-dash';
+	var pageTitle = pageTitle ? `${pageTitle} - ${siteTitle}` : siteTitle;
+	const siteDescription = 'Y-dash\'s Profile Site.';
+	var pageDescription = pageDescription ? `${siteDescription} ${pageDescription}` : siteDescription;
+	const siteUrl = 'https://y-dash.net';
+	var pageUrl = pageUrl ? `${siteUrl}/${pageUrl}` : siteUrl;
+	const image = 'static/icons/icon.png';
+	var type = type || 'article';
+%>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title><%= pageTitle %></title>
+<meta name="description" content="<%= pageDescription %>" />
+<link rel="canonical" href="<%= pageUrl %>" />
+
+<%# icon %>
+<link rel="apple-touch-icon" sizes="180x180" href="static/icons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="static/icons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="static/icons/favicon-16x16.png" />
+<link rel="manifest" href="static/icons/site.webmanifest" />
+<link rel="mask-icon" href="static/icons/safari-pinned-tab.svg" color="#202124" />
+<link rel="shortcut icon" href="static/icons/favicon.ico" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-config" content="static/icons/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+
+<%# OGP %>
+<%# itemprop %>
+<meta itemprop="name" content="<%= pageTitle %>" />
+<meta itemprop="description" content="<%= pageDescription %>" />
+<meta itemprop="image" content="<%= image %>" />
+<%# Facebook %>
+<meta property="og:url" content="<%= pageUrl %>" />
+<meta property="og:type" content="<%= type %>" />
+<meta property="og:site_name" content="<%= siteTitle %>" />
+<meta property="og:title" content="<%= pageTitle %>" />
+<meta property="og:description" content="<%= pageDescription %>" />
+<meta property="og:image" content="<%= image %>" />
+<%# Twitter %>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@Y_dash" />
+<meta name="twitter:creator" content="@Y_dash" />
+<meta name="twitter:title" content="<%= pageTitle %>" />
+<meta name="twitter:description" content="<%= pageDescription %>" />
+<meta name="twitter:image" content="<%= image %>" />
+
+<%# CSS %>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+<link rel="stylesheet" href="styles/global.css" />

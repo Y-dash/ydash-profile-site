@@ -4,13 +4,14 @@ let sass = require('gulp-sass');
 let autoprefixer = require('gulp-autoprefixer');
 let cleanCss = require('gulp-clean-css');
 let ejs = require('gulp-ejs');
-let prettify = require('gulp-prettify');
+let rename = require('gulp-rename');
+let htmlBeautify = require('gulp-html-beautify');
 
-const EJS_TASL = 'ejs';
-const EJS_SRC_WATCHING_PATH = 'templates/**/*.ejs';
+const EJS_TASK = 'ejs';
+const EJS_SRC_WATCHING_PATH = 'src/templates/**/*.ejs';
 const EJS_SRC_TARGET_PATH = [
-	'templates/**/*.ejs',
-	'!templates/**/_*.ejs'
+	'src/templates/**/*.ejs',
+	'!src/templates/**/_*.ejs'
 ];
 const EJS_DIST_PATH = 'dist';
 
@@ -19,16 +20,17 @@ const SCSS_SRC_PATH = 'src/styles/*.scss';
 const SCSS_DIST_PATH = 'dist/styles';
 
 const COPY_TASK = 'copy';
-const COPY_SRC_PATH = ['src/static'];
+const COPY_SRC_PATH = ['src/static/**/*'];
 const COPY_DIST_PATH = 'dist';
 
-gulp.task(EJS_TASL, (done) => {
+gulp.task(EJS_TASK, (done) => {
 	gulp.src(EJS_SRC_TARGET_PATH)
 		.pipe(plumber())
-		.pipe(ejs({}, {}, {
-			ext: '.html'
+		.pipe(ejs({}, { rmWhitespace: true }))
+		.pipe(rename({
+			extname: '.html'
 		}))
-		.pipe(prettify())
+		.pipe(htmlBeautify())
 		.pipe(gulp.dest(EJS_DIST_PATH));
 	done();
 })
@@ -55,7 +57,7 @@ gulp.task(COPY_TASK, (done) => {
 });
 
 gulp.task('default', (done) => {
-	gulp.watch(EJS_SRC_WATCHING_PATH, gulp.parallel(EJS_TASL));
+	gulp.watch(EJS_SRC_WATCHING_PATH, gulp.parallel(EJS_TASK));
 	gulp.watch(SCSS_SRC_PATH, gulp.parallel(SCSS_TASK));
 	gulp.watch(COPY_SRC_PATH, gulp.parallel(COPY_TASK));
 	done();

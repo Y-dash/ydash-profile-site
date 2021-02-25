@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<%- include('_global-head', {
+		pageDescription: '',
+		type: 'website'
+	}); %>
+	<link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+	<main class="index-nav">
+		<nav class="index-nav__wrapper">
+			<ul class="index-nav__list">
+				<li class="index-nav__item">
+					<h1 class="index-nav__logo">
+						Y-dash
+					</h1>
+				</li>
+				<li class="index-nav__item">
+					<a href="./about" class="index-nav__link">
+						About
+					</a>
+				</li>
+				<li class="index-nav__item">
+					<a href="./works" class="index-nav__link">
+						Works
+					</a>
+				</li>
+				<li class="index-nav__item">
+					<a href="./contact" class="index-nav__link">
+						Contact
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</main>
+
+	<%- include('_global-footer'); %>
+</body>
+</html>
