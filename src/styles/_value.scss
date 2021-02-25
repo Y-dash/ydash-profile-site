@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+$breakPoint: 750px;
+
 $root2: 1.41421356237;
 
 $commonBlack: #202124;
@@ -7,7 +9,7 @@ $commonWhite: #e8eaed;
 $commonGray: #5f6368;
 
 $globalFontFamily: 'Noto Serif JP', 'Helvetica', '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN W3', 'メイリオ', 'Meiryo', serif;
-$logoFontFamily: 'Great Vibes', cursive;
+$logoFontFamily: 'Great Vibes', 'Helvetica', '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN W3', 'メイリオ', 'Meiryo', cursive;
 $titleFontFamily: 'Bellefair', 'Helvetica', '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN W3', 'メイリオ', 'Meiryo', serif;
 
 @function globalNavWidth($value: 1) {

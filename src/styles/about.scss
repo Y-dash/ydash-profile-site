@@ -1,0 +1,169 @@
+@charset "UTF-8";
+@import '_value';
+
+.link-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+
+	padding-top: 2em;
+	padding-left: 5px;
+
+	font-size: 1.0625em;
+
+	&__item {
+		display: block;
+		
+		width: 100%;
+		height: 90px;
+		padding: 10px;
+
+		@media only screen and (min-width: $breakPoint) {
+			& {
+				width: 50%;
+			}
+		}
+	}
+	&__item-innner {
+		height: 100%;
+
+		background-color: rgba(32, 33, 36, 0.5);
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+
+		transform: skewX(-45deg);
+
+		&:hover, &:active {
+			background-color: $commonBlack;
+			box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+
+			transition-duration: .45s;
+			transition-property: background-color, box-shadow;
+			transition-timing-function: ease-in;
+			transition-delay: 0;
+		}
+	}
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		height: 100%;
+
+		font-family: 'Bellefair', 'Shippori Mincho', $globalFontFamily;
+		font-size: 1.117647058823529em;
+
+		color: inherit;
+		text-decoration: none;
+
+		transform: skewX(45deg);
+
+		&:hover, &:active {
+			color: #90A4AE;
+
+			transition-duration: .45s;
+			transition-property: color;
+			transition-timing-function: ease-in;
+			transition-delay: 0;
+		}
+		&--twitter:hover, &--twitter:active {
+			color: #1da1f2;
+		}
+		&--youtube:hover, &--youtube:active {
+			color: #FF0000;
+		}
+		&--blog:hover, &--blog:active {
+		}
+		&--instagram:hover, &--instagram:active {
+			color: #BA00B2;
+		}
+		&--github:hover, &--github:active {
+		}
+		&--qiita:hover, &--qiita:active {
+			color: #55C500;
+		}
+		&--wikipedia:hover, &--wikipedia:active {
+			color: #A7D7F9;
+		}
+		&--forest:hover, &--forest:active {
+			color: #339900;
+		}
+		&--bookmeter:hover, &--bookmeter:active {
+			color: #56970A;
+		}
+	}
+}
+
+.bio-list {
+	// padding-top: 2em;
+	padding-left: 5px;
+
+	font-size: 1.0625em;
+
+	&__year {
+		position: relative;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 3.5em;
+		padding: 0.25em 1em;
+		margin-top: 3em;
+
+		font-size: 1.176470588235294em;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+
+			display: block;
+			content: '';
+
+			background-color: $commonGray;
+
+			transform: skewX(-45deg);
+		}
+	}
+	&__year-body {
+	}
+	&__year-list {
+	}
+	&__month {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 3.5em;
+		padding: 0.25em 1em;
+		margin-top: 2em;
+	}
+	&__month-body {
+		padding-left: 3em;
+	}
+	&__item-list {
+	}
+	&__item {
+		display: block;
+
+		padding: 0.75em;
+		border-bottom: 1px solid $commonGray;
+
+		& a {
+			color: #8ab4f8;
+			text-decoration: none;
+
+			&:hover	{
+				color: #8ab4f8;
+				text-decoration: underline;
+			}
+			&:visited {
+				color: #8A8ADB;
+			}
+		}
+	}
+}

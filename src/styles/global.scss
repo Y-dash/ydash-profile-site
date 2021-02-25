@@ -5,7 +5,7 @@
 	box-sizing: border-box;
 }
 
-h1 {
+h1, h2, h3 {
 	font-weight: inherit;
 }
 
@@ -28,11 +28,11 @@ body {
 	width: 100%;
 	max-width: 800px;
 	$globalHeaderHeight: 125px;
-	padding: 5px 0 10px;
+	padding: 5px 0 0;
 	margin: 0 auto;
-	border-bottom: 2px solid $commonGray;
 
 	&__nav {
+		width: 100%;
 		height: $globalHeaderHeight;
 	}
 	&__list {
@@ -40,6 +40,7 @@ body {
 		justify-content: center;
 		align-items: center;
 
+		width: 100%;
 		height: 100%;
 	}
 	&__item {
@@ -57,6 +58,11 @@ body {
 
 		&:nth-of-type(1) {
 			flex: 1;
+		}
+		@media only screen and (min-width: $breakPoint) {
+			&:nth-of-type(n + 2) {
+				margin: 0 5px;
+			}
 		}
 	}
 	&__title, &__link {
@@ -87,13 +93,17 @@ body {
 		transform: rotateZ(-45deg);
 
 		transition-duration: .45s;
-		transition-property: color, background-color, box-shadow;
+		transition-property: background-color, box-shadow, transform;
 		transition-timing-function: ease-in;
 		transition-delay: 0;
 
 		&:hover, &:active {
 			background-color: $commonBlack;
 			box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+
+			transform: rotateZ(0);
+
+			transition-property: color, background-color, box-shadow, transform;
 		}
 	}
 	&__item:nth-of-type(2) &__link:hover, &__item:nth-of-type(2) &__link:active {
@@ -115,10 +125,18 @@ body {
 
 		font-family: $logoFontFamily;
 		font-size: calc(#{$globalHeaderHeight} / #{$root2} * 0.37);
-		font-size: calc(max(min(#{$globalHeaderHeight}, 25vw) / #{$root2} * 0.37, 25vw / 6));
+		font-size: calc((min(#{$globalHeaderHeight}, 25vw) / #{$root2} * 0.37));
 
 		color: inherit;
 		text-decoration: none;
+		
+		@media only screen and (min-width: $breakPoint) {
+			& {
+				justify-content: flex-start;
+				padding-left: 0.5em;
+				font-size: 66px;
+			}
+		}
 	}
 }
 
@@ -126,9 +144,92 @@ body {
 	position: relative;
 	z-index: 1;
 
+	width: 100%;
 	max-width: 800px;
-	padding: 0 10px;
+	padding: 0 5px;
 	margin: 0 auto;
+}
+
+.common-section {
+	position: relative;
+
+	$headerHeightVw: 30vw;
+	$headerHeightPx: 200px;
+	padding-top: 40px;
+	margin-bottom: 20px;
+
+	&::before {
+		position: absolute;
+		top: calc(40px + #{$headerHeightVw} - 1px);
+		top: calc(40px + min(#{$headerHeightVw}, #{$headerHeightPx}) - 1px);
+		right: calc(100% - #{$headerHeightVw} / 2);
+		right: calc(100% - min(#{$headerHeightVw}, #{$headerHeightPx}) / 2);
+		left: 0;
+		bottom: 0;
+		
+		display: block;
+		content: '';
+
+		border-right: 1px solid $commonGray;
+	}
+
+	&__header {
+		position: relative;
+
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		height: calc(#{$headerHeightVw});
+		height: calc(min(#{$headerHeightVw}, #{$headerHeightPx}));
+		padding-left: calc((#{$headerHeightVw} - #{$headerHeightVw} / #{$root2}) / 2);
+		padding-left: calc((min(#{$headerHeightVw}, #{$headerHeightPx}) - min(#{$headerHeightVw}, #{$headerHeightPx}) / #{$root2}) / 2);
+
+		&::before {
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			display: block;
+			content: '';
+
+			width: calc(100% - #{$headerHeightVw} + 1px);
+			width: calc(100% - min(#{$headerHeightVw}, #{$headerHeightPx}) + 1px);
+			height: 50%;
+			border-bottom: 1px solid $commonGray;
+		}
+	}
+	&__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: calc(#{$headerHeightVw} / #{$root2});
+		width: calc(min(#{$headerHeightVw}, #{$headerHeightPx}) / #{$root2});
+		height: calc(#{$headerHeightVw} / #{$root2});
+		height: calc(min(#{$headerHeightVw}, #{$headerHeightPx}) / #{$root2});
+		border: 1px solid $commonGray;
+
+		font-family: $titleFontFamily;
+		font-size: calc(#{$headerHeightVw} / #{$root2} * 0.3);
+		font-size: calc(min(#{$headerHeightVw}, #{$headerHeightPx}) / #{$root2} * 0.3);
+
+		transform: rotateZ(-45deg);
+	}
+	&__body {
+		padding-right: 1.125em;
+		padding-left: calc(#{$headerHeightVw} / 8 * 7 - 1.125em);
+		padding-left: calc(min(#{$headerHeightVw}, #{$headerHeightPx}) / 8 * 7 - 1.125em);
+
+		transform: translateY(calc(#{$headerHeightVw} / 8 * 2 * -1));
+		transform: translateY(calc(min(#{$headerHeightVw}, #{$headerHeightPx}) / 8 * 2 * -1));
+	}
+	&__paragraph {
+		padding-top: 2em;
+
+		font-size: 1.0625em;
+		line-height: 2;
+	}
 }
 
 .global-footer {
