@@ -1,16 +1,19 @@
 @charset "UTF-8";
 
+$root2: 1.41421356237;
+
 $commonBlack: #202124;
 $commonWhite: #e8eaed;
+$commonGray: #5f6368;
 
 $globalFontFamily: 'Noto Serif JP', 'Helvetica', '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN W3', 'メイリオ', 'Meiryo', serif;
 $logoFontFamily: 'Great Vibes', cursive;
 $titleFontFamily: 'Bellefair', 'Helvetica', '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN W3', 'メイリオ', 'Meiryo', serif;
 
 @function globalNavWidth($value: 1) {
-	@return calc(min(100vw - 5px, 100vh - 15vh) / 1.41421356237 * #{$value});
+	@return calc(min(100vw - 5px, 100vh - 15vh) / #{$root2} * #{$value});
 }
 
 @function globalNavWidthForIe($value: 1) {
-	@return calc(100vw / 1.41421356237 * #{$value});
+	@return calc(100vw / #{$root2} * #{$value});
 }
