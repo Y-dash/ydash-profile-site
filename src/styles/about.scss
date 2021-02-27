@@ -16,6 +16,7 @@
 		display: block;
 		
 		width: 100%;
+		max-width: 305px;
 		height: 90px;
 		padding: 10px;
 
@@ -91,6 +92,9 @@
 		&--bookmeter:hover, &--bookmeter:active {
 			color: #56970A;
 		}
+		&--geartics:hover, &--geartics:active {
+			color: #039be5;
+		}
 	}
 }
 
@@ -124,7 +128,7 @@
 			display: block;
 			content: '';
 
-			background-color: $commonGray;
+			background-color: $commonDarkGray;
 
 			transform: skewX(-45deg);
 		}
@@ -153,17 +157,6 @@
 		padding: 0.75em;
 		border-bottom: 1px solid $commonGray;
 
-		& a {
-			color: #8ab4f8;
-			text-decoration: none;
-
-			&:hover	{
-				color: #8ab4f8;
-				text-decoration: underline;
-			}
-			&:visited {
-				color: #8A8ADB;
-			}
-		}
+		@include commonLink;
 	}
 }
