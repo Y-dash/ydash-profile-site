@@ -7,6 +7,7 @@ $root2: 1.41421356237;
 $commonBlack: #202124;
 $commonWhite: #e8eaed;
 $commonGray: #5f6368;
+$commonDarkGray: #3C4043;
 
 $globalFontFamily: 'Noto Serif JP', 'Helvetica', '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN W3', 'メイリオ', 'Meiryo', serif;
 $logoFontFamily: 'Great Vibes', 'Helvetica', '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN W3', 'メイリオ', 'Meiryo', cursive;
@@ -18,4 +19,19 @@ $titleFontFamily: 'Bellefair', 'Helvetica', '游ゴシック', 'Yu Gothic', 'ヒ
 
 @function globalNavWidthForIe($value: 1) {
 	@return calc(100vw / #{$root2} * #{$value});
+}
+
+@mixin commonLink {
+	& a {
+		color: #8ab4f8;
+		text-decoration: none;
+
+		&:hover	{
+			color: #8ab4f8;
+			text-decoration: underline;
+		}
+		&:visited {
+			color: #8A8ADB;
+		}
+	}
 }
