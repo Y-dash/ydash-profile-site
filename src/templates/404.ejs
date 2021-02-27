@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<%- include('_global-head', {
+		pageTitle: 'Page Not Found',
+		pageDescription: 'Page Not Found'
+	}); %>
+</head>
+<body>
+	<%- include('_global-header'); %>
+
+	<main class="global-main">
+		<section class="common-section">
+			<header class="common-section__header">
+				<h2 class="common-section__title">
+					404
+				</h2>
+			</header>
+
+			<div class="common-section__body">
+				<p class="common-section__paragraph">
+					Page Not Found
+				</p>
+			</div>
+		</section>
+	</main>
+
+	<%- include('_global-footer'); %>
+</body>
+</html>
