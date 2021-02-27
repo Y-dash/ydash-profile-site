@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<%- include('_global-head', {
+		pageTitle: 'Contact',
+		pageDescription: '',
+		pageUrl: 'contact'
+	}); %>
+	<link rel="stylesheet" href="styles/contact.css" />
+</head>
+<body>
+	<%- include('_global-header'); %>
+
+	<main class="global-main">
+		<section class="common-section">
+			<header class="common-section__header">
+				<h2 class="common-section__title">
+					Contact
+				</h2>
+			</header>
+
+			<div class="common-section__body">
+				<p class="common-section__paragraph common-section__paragraph--mail">
+					y-dash&#64;y-dash.net
+				</p>
+			</div>
+			<div class="common-section__body">
+				<p class="common-section__paragraph">
+					土/日/祝日定休。<br />
+					他、年末年始など一般的な連休の際に適宜お休みをいただきます。
+				</p>
+			</div>
+		</section>
+	</main>
+
+	<%- include('_global-footer'); %>
+</body>
+</html>
