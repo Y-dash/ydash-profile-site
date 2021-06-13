@@ -33,7 +33,7 @@ gulp.task(EJS_TASK, (done) => {
 		.pipe(htmlBeautify())
 		.pipe(gulp.dest(EJS_DIST_PATH));
 	done();
-})
+});
 
 gulp.task(SCSS_TASK, (done) => {
 	gulp.src(SCSS_SRC_PATH)
@@ -45,7 +45,7 @@ gulp.task(SCSS_TASK, (done) => {
 		.pipe(cleanCss())
 		.pipe(gulp.dest(SCSS_DIST_PATH));
 	done();
-})
+});
 
 gulp.task(COPY_TASK, (done) => {
 	gulp.src(COPY_SRC_PATH, {
