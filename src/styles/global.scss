@@ -237,6 +237,8 @@ body {
 
 		font-size: 1.0625em;
 		line-height: 2;
+
+		@include commonLink;
 	}
 }
 
